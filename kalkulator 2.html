@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div
+    {
+        margin: 20px;
+    }
+
+</style>
+<body>
+    <div>
+        <input type="number" name="liczba1" placeholder="podaj liczbe 1"/>
+        <input type="number" name="liczba2" placeholder="podaj liczbe 2"/>
+    </div>
+    <div>
+        <button>suma</button>
+        <button>roznica</button>
+        <button>iloczyn</button>
+        <button>iloraz</button>
+    </div>
+    <div>tu bedzie wynik</div>
+    <script>
+        //pobieramy wszystie buttony
+        const btns = document.querySelectorAll('button');
+        const input1 = document.querySelector('input[name="liczba1"]')
+        const input2 = document.querySelector('input[name="liczba2"]')
+        const divresults = document.querySelector('div+div+div')
+        const suma = function (l1, l2)  {
+            return l1 + l2;
+        }
+        const odejmowanie = function (l1, l2)  {
+            return l1 - l2;
+        }
+        const iloraz = function (l1, l2)  {
+            return l1 / l2;
+        }
+        const iloczyn = function (l1, l2)  {
+            return l1 * l2;
+        }
+        btns[0].addEventListener('click',()=>{
+            const liczba1 = input1.value*1;
+            const liczba2 = input2.value*1;
+            divresults.textContent = 'suma wynosi ' + suma(liczba1, liczba2);
+        })
+        btns[1].addEventListener('click',()=>{
+            const liczba1 = input1.value*1;
+            const liczba2 = input2.value*1;
+            divresults.textContent = 'odejmowanie wynosi ' + odejmowanie(liczba1, liczba2);
+        })
+        btns[2].addEventListener('click',()=>{
+            const liczba1 = input1.value*1;
+            const liczba2 = input2.value*1;
+            divresults.textContent = 'iloraz wynosi ' + iloraz(liczba1, liczba2);
+        })
+        btns[3].addEventListener('click',()=>{
+            const liczba1 = input1.value*1;
+            const liczba2 = input2.value*1;
+            divresults.textContent = 'iloczyn wynosi ' + iloczyn(liczba1, liczba2);
+        })
+    </script>
+</body>
+</html>

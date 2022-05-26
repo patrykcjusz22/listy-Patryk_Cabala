@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 1</title>
+    
+</head>
+<body>
+
+    <div></div>
+
+    <script>
+        
+        const div = document.querySelector('div');
+
+        const Pierwsza = function(a){
+            let b=0;
+            for(let i=1;i<=a;i++){
+                let modulo=a%i;
+                if(modulo==0){
+                    b++;
+                }
+
+            }
+            if(b==2){
+                div.textContent='to jest liczba pierwsza';
+            }
+            else if(b==1){
+                div.textContent='podales liczbe 1';
+
+            }
+            else{
+                div.textContent='to nie jest liczba pierwsza'
+            }
+        }
+
+        Pierwsza(12532);
+
+
+    </script>
+    
+</body>
+</html>

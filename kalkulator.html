@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="number" name="liczba1" placeholder="Wpisz pierwsza liczba" />
+        <input type="number" name="liczba2" placeholder="Wpisz druga liczba" />
+        <button type="button"class="dodawanie">+</button>
+        <button type="button" class="odejmowanie">-</button>
+        <button type="button" class="mnozenie">*</button>
+        <button type="button" class="dzielenie">/</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const btnDodaj = document.querySelector('button.dodawanie');
+        const btnOdejmij = document.querySelector('button.odejmowanie');
+        const btnMnozenie = document.querySelector('button.mnozenie');
+        const btndzielenie = document.querySelector('button.dzielenie');
+        const divW = document.querySelector('div,wynik');
+
+        btnDodaj.addEventListener('click', () => {
+            const poleliczba1 = parseInt( document.querySelector('input[name=liczba1]').value);
+            const poleliczba2 = document.querySelector('input[name=liczba2]').value*1;
+
+            divW.textContent = `Suma liczby ${poleliczba1} i liczba ${poleliczba2} wynosi ${poleliczba1 + poleliczba2}`;    
+        });
+        btnOdejmij.addEventListener('click', () => {
+            const poleliczba1 = parseInt( document.querySelector('input[name=liczba1]').value);
+            const poleliczba2 = document.querySelector('input[name=liczba2]').value*1;
+
+            divW.textContent = `roznica liczby ${poleliczba1} i liczba ${poleliczba2} wynosi ${poleliczba1 - poleliczba2}`;    
+        });
+        btnMnozenie.addEventListener('click', () => {
+            const poleliczba1 = parseInt( document.querySelector('input[name=liczba1]').value);
+            const poleliczba2 = document.querySelector('input[name=liczba2]').value*1;
+
+            divW.textContent = `iloczyn liczby ${poleliczba1} i liczba ${poleliczba2} wynosi ${poleliczba1 * poleliczba2}`;    
+        });
+        btndzielenie.addEventListener('click', () => {
+            const poleliczba1 = parseInt( document.querySelector('input[name=liczba1]').value);
+            const poleliczba2 = document.querySelector('input[name=liczba2]').value*1;
+
+            divW.textContent = `iloraz liczby ${poleliczba1} i liczba ${poleliczba2} wynosi ${poleliczba1 / poleliczba2}`;    
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "number" name="liczba" placeholder="Wpisz wielkosc tablicy" />
+    <button> Wykonaj</button>
+    <div class="tablica"> Tu bedzie tablica</div>
+    <div class="maksimum"> </div>
+    <div class = "ile"></div>
+
+    <script>
+        // pobieramy elementy strony
+        const poleInput = document.querySelector ('input[name="liczba"]');
+        const btn = document.querySelector('button');
+        const divMaksimum = document.querySelector('div.maksimum');
+        const divTablica = document.querySelector('div.tablica');
+        const divIle = document.querySelector('div.ile');
+        
+
+        //towrzymy tablice
+        const liczby = [];
+
+        //funkcja obliczajaca maksimum tablicy
+        const maksTab = function(tab){
+            let maksLiczba = tab[0]; // przyjmujemy ze maksymalna liczba to pierwsza liczba w tablicy
+            //nastepnie porownujemy te liczbe z kazda liczba w tablicy i jesli jest mniejsza to wymieniamy
+            for (const liczba of tab) {
+                if (maksLiczba<liczba) {
+                 maksLiczba = liczba;
+                    
+                }
+            }
+            return maksLiczba;
+        };
+
+        //funkcja obliczajaca czestotliwosc wystepowania kokretnej liczby w tablicy
+        const ileRazy = function(tab, liczba){
+            let ile = 0;
+            tab.forEach((liczbWTablicy) => {
+                if (liczbWTablicy == liczba) ile++;
+            });
+            return ile;
+        };
+
+        // obslugujemy zdarzenie click na button
+       
+        btn.addEventListener('click', function(){
+            //zapelniamy tablice losowymi liczbami z zakersu 0-100, ilosc podaje uzytkownik
+                for (let i=0;i<parseInt(poleInput.value);i++){
+                liczby[i]=Math.round(Math.random()*100);
+                }
+                //wyswietlamy zawartosc tablicy w div
+
+                divTablica.textContent = liczby.join(' , ')
+
+                //obliczamy maksymalna liczbe w tablicy liczby
+                divMaksimum.textContent = `Maksymalna liczba wynosi: ${maksTab(liczby)}`;
+
+                //obliczamy ile razy w tablicy liczby wystepuje podana liczba
+                divIle.textContent = `Liczba 10 w tablicy wystepuje ${ileRazy (liczby, 10)} razy`;
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="liczba"/>
+       <button> Sprawdź </button>
+       <div class="wynik"> </div>
+    <script>
+        //odwołujemy się do poszczególnego elementu html
+        //obecnie pobierzemy buttona oraz div
+        const btn = document.querySelector('button'); // pobieramy po nazwie znacznika html
+        const divW = document.querySelector('div.wynik'); //pobieramy po nazwie znacznika html w połączeniu z nazwą klasy
+
+        //do przycisku (zmiennej btn) przypisujemy zdarzenie klikania myszką na przycisk
+        btn.addEventListener('click', function (){
+            // ponizszy kod wykona sie w momencie klikniecia w przycisk
+            // pobieramy wartośc pola input o nazwie liczba
+            const lczb = document.querySelector('input[name="liczba"]').value;
+            if(lczb % 2 == 0)
+            {
+                // do naszego diva o klasie wynik (zmienna divW) 'wrzucamy tresc'
+                divW.textContent='Podana liczba jest parzysta'
+            }
+            else
+            {
+                divW.textContent='Podana liczba jest nieparzysta'
+            }
+        });
+
+    /*    const liczba = prompt('Podaj liczbe: ');
+        if(liczba %2 == 0)
+        {
+            document.write('Podana liczba jest parzysta');
+        }
+        else 
+        {
+            document.write('Podana liczba jest nieparzysta');
+        }
+        */
+       
+        </script>
+</body>
+</html>
